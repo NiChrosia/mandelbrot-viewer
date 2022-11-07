@@ -11,5 +11,5 @@ WASD - move camera (still a bit off, they don't feel as they should)
 
 \[-=\] - control iteration level (- is lower, = is higher)
 
-\[scroll\] - control zoom level (scroll down to zoomer in)
+\[scroll\] - control zoom level (scroll down to zoom in)
 
