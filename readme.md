@@ -1,7 +1,6 @@
 # Mandelbrot viewer
 
-To run, call `nim r main.nim` while in the directory. This will run the file using Nim.
-This does require installing Nim.
+To run, call `nim r main.nim` while in the directory. This requires installing Nim, which can be done at https://nim-lang.org/.
 
 ## Controls
 
