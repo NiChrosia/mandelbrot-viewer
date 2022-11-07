@@ -6,10 +6,8 @@ This does require installing Nim.
 ## Controls
 
 As the controls were largely created to play around with the set, they're a bit odd.
-
-WASD - move camera (still a bit off, they don't feel as they should)
-
-\[-=\] - control iteration level (- is lower, = is higher)
-
-\[scroll\] - control zoom level (scroll down to zoom in)
-
+| name | key | description |
+| - | - | - |
+| camera movement | WASD | W, up, A, left, etc. |
+| zoom level | scroll wheel | scrolling down zooms in |
+| iterations | -, = | - decreases, = increases |
