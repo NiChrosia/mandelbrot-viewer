@@ -150,35 +150,37 @@ glBufferData(GL_ARRAY_BUFFER, sizeof(float32) * 2 * 6, addr data[0], GL_STATIC_D
 glVertexAttribPointer(0, 2, cGL_FLOAT, false, 0, nil)
 glEnableVertexAttribArray(0)
 
-var zCenter = [0f, 0f]
+var zCenter = vec2()
 var zSize = 3f
 var iterations: int32 = 1000
 
 proc input =
+    let movementFactor = 0.01f
+
     if window.buttonDown[KeyA]:
-        zCenter[0] -= zSize / 10f
+        zCenter.x -= zSize * movementFactor
     if window.buttonDown[KeyD]:
-        zCenter[0] += zSize / 10f
+        zCenter.x += zSize * movementFactor
     if window.buttonDown[KeyW]:
-        zCenter[1] += zSize / 10f
+        zCenter.y += zSize * movementFactor
     if window.buttonDown[KeyS]:
-        zCenter[1] -= zSize / 10f
+        zCenter.y -= zSize * movementFactor
 
     if window.buttonDown[KeyMinus]:
         if iterations > 50:
-            iterations -= 10
+            iterations = (iterations * 99) div 100
     
     if window.buttonDown[KeyEqual]:
         if iterations < 10000:
-            iterations += 10
+            iterations = (iterations * 101) div 100
 
-    zSize *= 1f + window.scrollDelta.y * 0.1f
+    zSize *= 1f - window.scrollDelta.y * 0.1f
 
 window.onFrame = proc =
     glClearColor(0f, 0f, 0f, 0f)
     glClear(GL_COLOR_BUFFER_BIT)
 
-    glUniform2f(l("zCenter"), zCenter[0], zCenter[1])
+    glUniform2f(l("zCenter"), zCenter.x, zCenter.y)
     glUniform1f(l("zSize"), zSize)
     glUniform1i(l("iterations"), iterations)
 
