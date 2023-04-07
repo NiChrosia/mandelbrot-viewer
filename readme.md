@@ -8,5 +8,5 @@ As the controls were largely created to play around with the set, they're a bit 
 | name | key | description |
 | - | - | - |
 | camera movement | WASD | W, up, A, left, etc. |
-| zoom level | scroll wheel | scrolling down zooms in |
-| iterations | -, = | - decreases, = increases |
+| zoom level | scroll wheel | scrolling up zooms in; vice versa |
+| iterations | -, = | - multiplies by 0.99, = multiplies by 1.01 |
